@@ -1,9 +1,9 @@
 
 describe "delete" do
   context "when a registered user" do
-    let(:user) { build(:registered_user) }
-    let(:token) { ApiUser.token(user.email, user.password) }
-    let(:result) { ApiUser.remove(token, user.id) }
+    let(:user) { build(:registered_user) } #faz a massa de teste, a criação do usuário
+    let(:token) { ApiUser.token(user.email, user.password) } #
+    let(:result) { ApiUser.remove(token, user.id) }# :result objeto para consumir abaixo na expectativa 
 
     it { expect(result.response.code).to eql "204" }
   end

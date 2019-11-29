@@ -7,7 +7,7 @@ class ApiUser
 
   def self.token(user_email, user_pass)
     result = post("/auth", body: { email: user_email, password: user_pass }.to_json)
-    "JWT #{result.parsed_response["token"]}"
+    "JWT #{result.parsed_response["token"]}" #retorna o token já no formato jwt
   end
 
   def self.save(user)
